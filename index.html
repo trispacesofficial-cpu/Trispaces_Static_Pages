@@ -52,17 +52,63 @@
             z-index: 9999;
             animation: fadeOutLoader 0.5s ease 2.5s forwards;
         }
+        #loader .logo-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
         #loader .logo {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--nc-text-light);
             animation: fadeInOutLogo 2.5s ease-in-out forwards;
+            position: relative;
+            z-index: 2;
+        }
+        #loader .logo img {
+            height: 2.5rem;
         }
         @keyframes fadeInOutLogo {
-            0% { opacity: 0; }
-            40%, 60% { opacity: 1; }
-            100% { opacity: 0; }
+            0% { opacity: 0; transform: scale(0.8); }
+            30%, 70% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0; transform: scale(0.8); }
         }
+
+        .sparks {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 10px;
+            height: 10px;
+            z-index: 1;
+        }
+        .spark {
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background-color: var(--nc-accent-blue);
+            animation: spark-animation 1.25s ease-out infinite;
+            animation-delay: calc(var(--i) * 0.1s);
+        }
+        @keyframes spark-animation {
+            0% {
+                transform: rotate(calc(var(--i) * 45deg)) translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: rotate(calc(var(--i) * 45deg)) translateY(80px);
+                opacity: 0;
+            }
+        }
+        .sparks .spark:nth-child(1) { --i: 0; }
+        .sparks .spark:nth-child(2) { --i: 1; }
+        .sparks .spark:nth-child(3) { --i: 2; }
+        .sparks .spark:nth-child(4) { --i: 3; }
+        .sparks .spark:nth-child(5) { --i: 4; }
+        .sparks .spark:nth-child(6) { --i: 5; }
+        .sparks .spark:nth-child(7) { --i: 6; }
+        .sparks .spark:nth-child(8) { --i: 7; }
         @keyframes fadeOutLoader {
             to { opacity: 0; visibility: hidden; }
         }
@@ -88,9 +134,11 @@
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
         }
         .navbar-brand {
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: var(--nc-text-light) !important;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        .navbar-brand img {
+            height: 2.5rem;
         }
         .btn-custom {
             background-color: var(--nc-light-beige);
@@ -290,6 +338,14 @@
             line-height: 1.6;
         }
 
+        .service-card-img {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
         /* Portfolio Section */
         .portfolio-item {
             position: relative;
@@ -487,7 +543,15 @@
     
     <!-- Loader Animation -->
     <div id="loader">
-        <div class="logo">NOVACASA</div>
+        <div class="logo-container">
+            <div class="logo"><img src="assets/images/novacasa_logo.jpg" alt="NovaCasa Logo"></div>
+            <div class="sparks">
+                <span class="spark"></span><span class="spark"></span>
+                <span class="spark"></span><span class="spark"></span>
+                <span class="spark"></span><span class="spark"></span>
+                <span class="spark"></span><span class="spark"></span>
+            </div>
+        </div>
     </div>
     
     <!-- Main Content -->
@@ -496,7 +560,7 @@
         <header class="fixed-top">
             <nav class="navbar navbar-expand-lg">
                 <div class="container">
-                    <a class="navbar-brand" href="#"><img src="assets/images/novacasa_logo.jpg" alt="NovaCasa Logo" style="height: 40px;"></a>
+                    <a class="navbar-brand" href="#"><img src="assets/images/novacasa_logo.jpg" alt="NovaCasa Logo"></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="bi bi-list hamburger-icon"></i>
                         <i class="bi bi-x-lg close-icon d-none"></i>
@@ -677,6 +741,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-11 col-md-8 col-lg-6">
                                     <div class="service-card">
+                                        <img src="assets/images/residential_interiors.jpg" alt="Residential Interiors" class="service-card-img">
                                         <div class="service-icon"><i class="bi bi-house-door"></i></div>
                                         <h3 class="service-title">Residential Interiors</h3>
                                         <p class="service-description">Modular kitchens, wardrobes, bedrooms, and living rooms designed to perfection.</p>
@@ -688,6 +753,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-11 col-md-8 col-lg-6">
                                     <div class="service-card">
+                                        <img src="assets/images/commercial_interiors.jpg" alt="Commercial Interiors" class="service-card-img">
                                         <div class="service-icon"><i class="bi bi-building"></i></div>
                                         <h3 class="service-title">Commercial Interiors</h3>
                                         <p class="service-description">Offices, retail showrooms, and co-working spaces that inspire productivity.</p>
@@ -699,6 +765,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-11 col-md-8 col-lg-6">
                                     <div class="service-card">
+                                        <img src="assets/images/custom_furniture.jpg" alt="Custom Furniture" class="service-card-img">
                                         <div class="service-icon"><i class="bi bi-tools"></i></div>
                                         <h3 class="service-title">Custom Furniture</h3>
                                         <p class="service-description">Tailor-made furniture designed to suit your space and taste perfectly.</p>
@@ -710,6 +777,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-11 col-md-8 col-lg-6">
                                     <div class="service-card">
+                                        <img src="assets/images/false_ceiling_lighting.jpg" alt="False Ceiling & Lighting" class="service-card-img">
                                         <div class="service-icon"><i class="bi bi-lightbulb"></i></div>
                                         <h3 class="service-title">False Ceiling & Lighting</h3>
                                         <p class="service-description">Modern, stylish, and functional ceiling solutions with perfect lighting.</p>
@@ -721,6 +789,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-11 col-md-8 col-lg-6">
                                     <div class="service-card">
+                                        <img src="assets/images/wall_decor_paints.jpg" alt="Wall Décor & Paints" class="service-card-img">
                                         <div class="service-icon"><i class="bi bi-palette"></i></div>
                                         <h3 class="service-title">Wall Décor & Paints</h3>
                                         <p class="service-description">Textured, vibrant, and elegant finishes that transform your walls.</p>
@@ -732,6 +801,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-11 col-md-8 col-lg-6">
                                     <div class="service-card">
+                                        <img src="assets/images/flooring_solutions.jpg" alt="Flooring Solutions" class="service-card-img">
                                         <div class="service-icon"><i class="bi bi-grid-3x3"></i></div>
                                         <h3 class="service-title">Flooring Solutions</h3>
                                         <p class="service-description">Tiles, wooden, marble, and budget-friendly flooring alternatives.</p>
