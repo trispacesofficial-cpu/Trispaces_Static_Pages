@@ -78,7 +78,7 @@
         
         /* Header */
         .navbar { 
-            padding: 1.5rem 0; 
+            padding: 1rem 0; 
             background-color: rgba(13, 13, 13, 0.95);
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
@@ -105,6 +105,31 @@
             background-color: var(--nc-gold);
             color: #000;
             transform: translateY(-2px);
+        }
+
+        .navbar-toggler {
+            border: none;
+            padding: 0;
+        }
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        .navbar-toggler .bi {
+            font-size: 2.2rem;
+            color: var(--nc-text-light);
+            transition: all 0.3s ease;
+        }
+        .navbar-toggler:hover .bi {
+            color: var(--nc-accent-blue);
+        }
+        .navbar-collapse {
+            transition: height 0.3s ease-in-out;
+        }
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--nc-accent-blue) !important;
         }
 
         /* Hero Section with Carousel */
@@ -471,14 +496,17 @@
             <nav class="navbar navbar-expand-lg">
                 <div class="container">
                     <a class="navbar-brand" href="#"><img src="assets/images/novacasa_logo.jpg" alt="NovaCasa Logo" style="height: 40px;"></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                        <span class="navbar-toggler-icon"></span>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="bi bi-list hamburger-icon"></i>
+                        <i class="bi bi-x-lg close-icon d-none"></i>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav ms-auto me-3">
+                            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                             <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                             <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
                             <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#leadership">Leadership</a></li>
                             <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                         </ul>
                         <a href="#contact" class="btn btn-custom">Begin the Conversation</a>
@@ -489,7 +517,7 @@
 
         <main>
             <!-- Hero Section with Carousel -->
-            <section class="hero">
+            <section class="hero" id="home">
                 <div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel" data-bs-interval="5000">
                     <div class="carousel-inner">
                         <div class="carousel-item active" style="background-image: url('assets/images/qXsgN3qwc1qK.jpeg')"></div>
@@ -502,107 +530,6 @@
                     <h1 class="fade-in-up hero-title">Transforming Spaces <br> Creating <span class="highlight">Experiences</span></h1>
                     <p class="fade-in-up hero-text">We don't just design interiors. We craft environments that reflect both style and substance, while keeping affordability in mind. Every space has a soul waiting to be revealed.</p>
                     <a href="#portfolio" class="btn btn-custom fade-in-up hero-button">Explore Our Compositions</a>
-                </div>
-            </section>
-
-            <!-- About Section -->
-            <section id="about" class="about-section">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 mx-auto text-center animate-on-scroll">
-                            <h2 class="section-title">About NovaCasa</h2>
-                            <p class="section-subtitle">At NovaCasa Interiors, we believe that every space has a soul waiting to be revealed. Our mission is to design interiors that reflect both style and substance, while keeping affordability in mind.</p>
-                            <p class="lead">With a strong presence across Hyderabad and Bangalore, NovaCasa has grown into a trusted brand for custom-made interiors. Whether it's a compact home, a luxury villa, or a commercial workspace, we have the expertise, manpower, and resources to deliver quality interiors at low cost.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="stats-grid animate-on-scroll">
-                        <div class="stat-item">
-                            <span class="stat-number">300+</span>
-                            <span class="stat-label">Skilled Employees</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">30</span>
-                            <span class="stat-label">Active Units</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">2</span>
-                            <span class="stat-label">Major Cities</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">1000+</span>
-                            <span class="stat-label">Happy Clients</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Services Section with Carousel -->
-            <section id="services" class="container">
-                <div class="text-center animate-on-scroll">
-                    <h2 class="section-title">Our Services</h2>
-                    <p class="section-subtitle">We are a one-stop destination for all kinds of interior needs</p>
-                </div>
-                
-                <div id="servicesCarousel" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="service-card">
-                                        <div class="service-icon"><i class="bi bi-house-door"></i></div>
-                                        <h3 class="service-title">Residential Interiors</h3>
-                                        <p class="service-description">Modular kitchens, wardrobes, bedrooms, and living rooms designed to perfection.</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="service-card">
-                                        <div class="service-icon"><i class="bi bi-building"></i></div>
-                                        <h3 class="service-title">Commercial Interiors</h3>
-                                        <p class="service-description">Offices, retail showrooms, and co-working spaces that inspire productivity.</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="service-card">
-                                        <div class="service-icon"><i class="bi bi-tools"></i></div>
-                                        <h3 class="service-title">Custom Furniture</h3>
-                                        <p class="service-description">Tailor-made furniture designed to suit your space and taste perfectly.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="service-card">
-                                        <div class="service-icon"><i class="bi bi-lightbulb"></i></div>
-                                        <h3 class="service-title">False Ceiling & Lighting</h3>
-                                        <p class="service-description">Modern, stylish, and functional ceiling solutions with perfect lighting.</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="service-card">
-                                        <div class="service-icon"><i class="bi bi-palette"></i></div>
-                                        <h3 class="service-title">Wall Décor & Paints</h3>
-                                        <p class="service-description">Textured, vibrant, and elegant finishes that transform your walls.</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="service-card">
-                                        <div class="service-icon"><i class="bi bi-grid-3x3"></i></div>
-                                        <h3 class="service-title">Flooring Solutions</h3>
-                                        <p class="service-description">Tiles, wooden, marble, and budget-friendly flooring alternatives.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#servicesCarousel" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#servicesCarousel" data-bs-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </button>
                 </div>
             </section>
 
@@ -736,8 +663,164 @@
                 </div>
             </section>
 
+            <!-- Services Section with Carousel -->
+            <section id="services" class="container">
+                <div class="text-center animate-on-scroll">
+                    <h2 class="section-title">Our Services</h2>
+                    <p class="section-subtitle">We are a one-stop destination for all kinds of interior needs</p>
+                </div>
+                
+                <!-- Desktop Carousel -->
+                <div id="servicesCarousel" class="carousel slide d-none d-md-block" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="service-card">
+                                        <div class="service-icon"><i class="bi bi-house-door"></i></div>
+                                        <h3 class="service-title">Residential Interiors</h3>
+                                        <p class="service-description">Modular kitchens, wardrobes, bedrooms, and living rooms designed to perfection.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="service-card">
+                                        <div class="service-icon"><i class="bi bi-building"></i></div>
+                                        <h3 class="service-title">Commercial Interiors</h3>
+                                        <p class="service-description">Offices, retail showrooms, and co-working spaces that inspire productivity.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="service-card">
+                                        <div class="service-icon"><i class="bi bi-tools"></i></div>
+                                        <h3 class="service-title">Custom Furniture</h3>
+                                        <p class="service-description">Tailor-made furniture designed to suit your space and taste perfectly.</p>
+                                    </div>
+                                </_div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="service-card">
+                                        <div class="service-icon"><i class="bi bi-lightbulb"></i></div>
+                                        <h3 class="service-title">False Ceiling & Lighting</h3>
+                                        <p class="service-description">Modern, stylish, and functional ceiling solutions with perfect lighting.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="service-card">
+                                        <div class="service-icon"><i class="bi bi-palette"></i></div>
+                                        <h3 class="service-title">Wall Décor & Paints</h3>
+                                        <p class="service-description">Textured, vibrant, and elegant finishes that transform your walls.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="service-card">
+                                        <div class="service-icon"><i class="bi bi-grid-3x3"></i></div>
+                                        <h3 class="service-title">Flooring Solutions</h3>
+                                        <p class="service-description">Tiles, wooden, marble, and budget-friendly flooring alternatives.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#servicesCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#servicesCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+
+                <!-- Mobile Carousel -->
+                <div id="servicesCarouselMobile" class="carousel slide d-md-none" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="service-card">
+                                <div class="service-icon"><i class="bi bi-house-door"></i></div>
+                                <h3 class="service-title">Residential Interiors</h3>
+                                <p class="service-description">Modular kitchens, wardrobes, bedrooms, and living rooms designed to perfection.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="service-card">
+                                <div class="service-icon"><i class="bi bi-building"></i></div>
+                                <h3 class="service-title">Commercial Interiors</h3>
+                                <p class="service-description">Offices, retail showrooms, and co-working spaces that inspire productivity.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="service-card">
+                                <div class="service-icon"><i class="bi bi-tools"></i></div>
+                                <h3 class="service-title">Custom Furniture</h3>
+                                <p class="service-description">Tailor-made furniture designed to suit your space and taste perfectly.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="service-card">
+                                <div class="service-icon"><i class="bi bi-lightbulb"></i></div>
+                                <h3 class="service-title">False Ceiling & Lighting</h3>
+                                <p class="service-description">Modern, stylish, and functional ceiling solutions with perfect lighting.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="service-card">
+                                <div class="service-icon"><i class="bi bi-palette"></i></div>
+                                <h3 class="service-title">Wall Décor & Paints</h3>
+                                <p class="service-description">Textured, vibrant, and elegant finishes that transform your walls.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="service-card">
+                                <div class="service-icon"><i class="bi bi-grid-3x3"></i></div>
+                                <h3 class="service-title">Flooring Solutions</h3>
+                                <p class="service-description">Tiles, wooden, marble, and budget-friendly flooring alternatives.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#servicesCarouselMobile" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#servicesCarouselMobile" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="about-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto text-center animate-on-scroll">
+                            <h2 class="section-title">About NovaCasa</h2>
+                            <p class="section-subtitle">At NovaCasa Interiors, we believe that every space has a soul waiting to be revealed. Our mission is to design interiors that reflect both style and substance, while keeping affordability in mind.</p>
+                            <p class="lead">With a strong presence across Hyderabad and Bangalore, NovaCasa has grown into a trusted brand for custom-made interiors. Whether it's a compact home, a luxury villa, or a commercial workspace, we have the expertise, manpower, and resources to deliver quality interiors at low cost.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stats-grid animate-on-scroll">
+                        <div class="stat-item">
+                            <span class="stat-number">300+</span>
+                            <span class="stat-label">Skilled Employees</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">30</span>
+                            <span class="stat-label">Active Units</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">2</span>
+                            <span class="stat-label">Major Cities</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">1000+</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- Leadership Section -->
-            <section class="container">
+            <section id="leadership" class="container">
                 <div class="text-center animate-on-scroll">
                     <h2 class="section-title">Leadership Team</h2>
                     <p class="section-subtitle">NovaCasa's strength comes from visionary leadership built on trust, transparency, and timely delivery</p>
@@ -936,6 +1019,54 @@
                     wrap: true
                 });
             }
+
+            // Mobile Navbar icon toggle
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const navbarNav = document.getElementById('navbarNav');
+            const hamburgerIcon = document.querySelector('.hamburger-icon');
+            const closeIcon = document.querySelector('.close-icon');
+
+            if (navbarToggler) {
+                navbarNav.addEventListener('show.bs.collapse', function () {
+                    hamburgerIcon.classList.add('d-none');
+                    closeIcon.classList.remove('d-none');
+                });
+
+                navbarNav.addEventListener('hide.bs.collapse', function () {
+                    closeIcon.classList.add('d-none');
+                    hamburgerIcon.classList.remove('d-none');
+                });
+            }
+
+            // Close mobile navbar on link click
+            const navLinks = document.querySelectorAll('#navbarNav .nav-link');
+            const bsCollapse = new bootstrap.Collapse(navbarNav, { toggle: false });
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navbarNav.classList.contains('show')) {
+                        bsCollapse.hide();
+                    }
+                });
+            });
+
+            // Active nav link highlighting on scroll
+            const sections = document.querySelectorAll('section[id]');
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - 150) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(current)) {
+                        link.classList.add('active');
+                    }
+                });
+            });
         });
     </script>
 </body>
