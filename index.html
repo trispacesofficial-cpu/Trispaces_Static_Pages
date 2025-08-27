@@ -445,6 +445,15 @@
             .section-title { font-size: 2rem; }
             .stats-grid { grid-template-columns: 1fr; }
             section { padding: 4rem 0; }
+
+            /* Portfolio Carousel for small screens */
+            #portfolioCarousel .carousel-item {
+                padding: 0 1rem;
+            }
+            #portfolioCarousel .carousel-control-prev,
+            #portfolioCarousel .carousel-control-next {
+                width: 10%;
+            }
         }
     </style>
 </head>
@@ -461,7 +470,7 @@
         <header class="fixed-top">
             <nav class="navbar navbar-expand-lg">
                 <div class="container">
-                    <a class="navbar-brand" href="#">NovaCasa</a>
+                    <a class="navbar-brand" href="#"><img src="assets/images/novacasa_logo.jpg" alt="NovaCasa Logo" style="height: 40px;"></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -604,7 +613,72 @@
                     <p class="section-subtitle">A curated gallery of spaces transformed into lasting experiences</p>
                 </div>
                 
-                <div class="row">
+                <div id="portfolioCarousel" class="carousel slide d-block d-md-none" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="portfolio-item animate-on-scroll">
+                                <img src="assets/images/qXsgN3qwc1qK.jpeg" alt="Luxury Dining Space">
+                                <div class="portfolio-overlay">
+                                    <p class="portfolio-title">Luxury Dining Experience</p>
+                                    <p class="portfolio-category">Residential | Modern Elegance</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="portfolio-item animate-on-scroll">
+                                <img src="assets/images/DudGPghKkDIn.jpg" alt="Contemporary Living">
+                                <div class="portfolio-overlay">
+                                    <p class="portfolio-title">Contemporary Living</p>
+                                    <p class="portfolio-category">Residential | Minimalist Design</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="portfolio-item animate-on-scroll">
+                                <img src="assets/images/mitvkBGwV3Fw.jpg" alt="Modern Bedroom">
+                                <div class="portfolio-overlay">
+                                    <p class="portfolio-title">Serene Bedroom</p>
+                                    <p class="portfolio-category">Residential | Comfort & Style</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="portfolio-item animate-on-scroll">
+                                <img src="assets/images/n6RKpTxnGKwB.jpg" alt="Open Living Space">
+                                <div class="portfolio-overlay">
+                                    <p class="portfolio-title">Open Living Concept</p>
+                                    <p class="portfolio-category">Residential | Spacious Design</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="portfolio-item animate-on-scroll">
+                                <img src="assets/images/e0Y7yRQ8imzv.jpg" alt="Modern Interior">
+                                <div class="portfolio-overlay">
+                                    <p class="portfolio-title">Modern Interior</p>
+                                    <p class="portfolio-category">Commercial | Professional Space</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="portfolio-item animate-on-scroll">
+                                <img src="assets/images/WI6q0R99mynW.jpeg" alt="Architectural Excellence">
+                                <div class="portfolio-overlay">
+                                    <p class="portfolio-title">Architectural Excellence</p>
+                                    <p class="portfolio-category">Commercial | Modern Design</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+
+                <div class="row d-none d-md-flex">
                     <div class="col-md-6 col-lg-4">
                         <div class="portfolio-item animate-on-scroll">
                             <img src="assets/images/qXsgN3qwc1qK.jpeg" alt="Luxury Dining Space">
@@ -854,6 +928,14 @@
             carousels.forEach(carousel => {
                 carouselObserver.observe(carousel);
             });
+
+            // Initialize portfolio carousel for small screens
+            if (window.innerWidth < 768) { // Bootstrap's md breakpoint is 768px
+                const portfolioCarousel = new bootstrap.Carousel(document.getElementById('portfolioCarousel'), {
+                    interval: 4000,
+                    wrap: true
+                });
+            }
         });
     </script>
 </body>
