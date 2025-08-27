@@ -64,7 +64,7 @@
             z-index: 2;
         }
         #loader .logo img {
-            height: 2.5rem;
+            height: 10rem;
         }
         @keyframes fadeInOutLogo {
             0% { opacity: 0; transform: scale(0.8); }
@@ -139,6 +139,8 @@
         }
         .navbar-brand img {
             height: 2.5rem;
+            transform: scale(4.9);
+            transform-origin: left center;
         }
         .btn-custom {
             background-color: var(--nc-light-beige);
@@ -317,14 +319,8 @@
         }
         
         .service-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-0px);
             background: rgba(255, 255, 255, 0.08);
-        }
-        
-        .service-icon {
-            font-size: 3rem;
-            color: var(--nc-accent-blue);
-            margin-bottom: 1.5rem;
         }
         
         .service-title {
@@ -332,18 +328,14 @@
             font-weight: 600;
             margin-bottom: 1rem;
         }
-        
-        .service-description {
-            color: var(--nc-text-muted);
-            line-height: 1.6;
-        }
 
         .service-card-img {
             width: 100%;
+            height: 70%;
             aspect-ratio: 16/9;
             object-fit: cover;
             border-radius: 8px;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         /* Portfolio Section */
@@ -402,6 +394,17 @@
             color: var(--nc-accent-blue);
             font-weight: 500;
             margin-bottom: 1rem;
+        }
+        .leadership-card img {
+            width: 120px;               /* size of the profile */
+            height: 120px;
+            border-radius: 50%;         /* makes it circular */
+            object-fit: cover;          /* keeps face nicely cropped */
+            margin-bottom: 1rem;        /* spacing between image and name */
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border: 3px solid var(--nc-accent-blue); /* optional: highlight border */
         }
         
         .leader-description {
@@ -645,15 +648,6 @@
                         </div>
                         <div class="carousel-item">
                             <div class="portfolio-item animate-on-scroll">
-                                <img src="assets/images/e0Y7yRQ8imzv.jpg" alt="Modern Interior">
-                                <div class="portfolio-overlay">
-                                    <p class="portfolio-title">Modern Interior</p>
-                                    <p class="portfolio-category">Commercial | Professional Space</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="portfolio-item animate-on-scroll">
                                 <img src="assets/images/WI6q0R99mynW.jpeg" alt="Architectural Excellence">
                                 <div class="portfolio-overlay">
                                     <p class="portfolio-title">Architectural Excellence</p>
@@ -709,15 +703,6 @@
                     </div>
                     <div class="col-md-6 col-lg-4">
                         <div class="portfolio-item animate-on-scroll">
-                            <img src="assets/images/e0Y7yRQ8imzv.jpg" alt="Modern Interior">
-                            <div class="portfolio-overlay">
-                                <p class="portfolio-title">Modern Interior</p>
-                                <p class="portfolio-category">Commercial | Professional Space</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="portfolio-item animate-on-scroll">
                             <img src="assets/images/WI6q0R99mynW.jpeg" alt="Architectural Excellence">
                             <div class="portfolio-overlay">
                                 <p class="portfolio-title">Architectural Excellence</p>
@@ -742,9 +727,7 @@
                                 <div class="col-11 col-md-8 col-lg-6">
                                     <div class="service-card">
                                         <img src="assets/images/residential_interiors.jpg" alt="Residential Interiors" class="service-card-img">
-                                        <div class="service-icon"><i class="bi bi-house-door"></i></div>
                                         <h3 class="service-title">Residential Interiors</h3>
-                                        <p class="service-description">Modular kitchens, wardrobes, bedrooms, and living rooms designed to perfection.</p>
                                     </div>
                                 </div>
                             </div>
@@ -754,9 +737,7 @@
                                 <div class="col-11 col-md-8 col-lg-6">
                                     <div class="service-card">
                                         <img src="assets/images/commercial_interiors.jpg" alt="Commercial Interiors" class="service-card-img">
-                                        <div class="service-icon"><i class="bi bi-building"></i></div>
                                         <h3 class="service-title">Commercial Interiors</h3>
-                                        <p class="service-description">Offices, retail showrooms, and co-working spaces that inspire productivity.</p>
                                     </div>
                                 </div>
                             </div>
@@ -766,9 +747,7 @@
                                 <div class="col-11 col-md-8 col-lg-6">
                                     <div class="service-card">
                                         <img src="assets/images/custom_furniture.jpg" alt="Custom Furniture" class="service-card-img">
-                                        <div class="service-icon"><i class="bi bi-tools"></i></div>
                                         <h3 class="service-title">Custom Furniture</h3>
-                                        <p class="service-description">Tailor-made furniture designed to suit your space and taste perfectly.</p>
                                     </div>
                                 </div>
                             </div>
@@ -778,9 +757,7 @@
                                 <div class="col-11 col-md-8 col-lg-6">
                                     <div class="service-card">
                                         <img src="assets/images/false_ceiling_lighting.jpg" alt="False Ceiling & Lighting" class="service-card-img">
-                                        <div class="service-icon"><i class="bi bi-lightbulb"></i></div>
                                         <h3 class="service-title">False Ceiling & Lighting</h3>
-                                        <p class="service-description">Modern, stylish, and functional ceiling solutions with perfect lighting.</p>
                                     </div>
                                 </div>
                             </div>
@@ -790,9 +767,7 @@
                                 <div class="col-11 col-md-8 col-lg-6">
                                     <div class="service-card">
                                         <img src="assets/images/wall_decor_paints.jpg" alt="Wall Décor & Paints" class="service-card-img">
-                                        <div class="service-icon"><i class="bi bi-palette"></i></div>
                                         <h3 class="service-title">Wall Décor & Paints</h3>
-                                        <p class="service-description">Textured, vibrant, and elegant finishes that transform your walls.</p>
                                     </div>
                                 </div>
                             </div>
@@ -802,9 +777,7 @@
                                 <div class="col-11 col-md-8 col-lg-6">
                                     <div class="service-card">
                                         <img src="assets/images/flooring_solutions.jpg" alt="Flooring Solutions" class="service-card-img">
-                                        <div class="service-icon"><i class="bi bi-grid-3x3"></i></div>
                                         <h3 class="service-title">Flooring Solutions</h3>
-                                        <p class="service-description">Tiles, wooden, marble, and budget-friendly flooring alternatives.</p>
                                     </div>
                                 </div>
                             </div>
@@ -861,6 +834,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="leadership-card animate-on-scroll">
+                            <img src="assets/images/rakesh.jpg" alt="CEO">
                             <h3 class="leader-name">Rakesh</h3>
                             <p class="leader-title">CEO</p>
                             <p class="leader-description">The creative mind who drives innovation and sets new design benchmarks for the industry.</p>
@@ -868,6 +842,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="leadership-card animate-on-scroll">
+                            <img src="assets/images/kavyanjali.jpg" alt="CFO">
                             <h3 class="leader-name">Kavyanjali</h3>
                             <p class="leader-title">CFO</p>
                             <p class="leader-description">The financial strategist ensuring quality remains affordable and cost-effective for all clients.</p>
@@ -875,6 +850,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="leadership-card animate-on-scroll">
+                            <img src="assets/images/shravan_kumar.jpg" alt="COO">
                             <h3 class="leader-name">Shravan Kumar</h3>
                             <p class="leader-title">COO</p>
                             <p class="leader-description">The operations expert who ensures smooth, timely project execution across all units.</p>
