@@ -125,10 +125,11 @@
         .navbar-collapse {
             transition: height 0.3s ease-in-out;
         }
-        .nav-link {
+        .navbar .nav-link {
+            color: var(--nc-text-light);
             transition: color 0.3s ease;
         }
-        .nav-link:hover, .nav-link.active {
+        .navbar .nav-link:hover, .navbar .nav-link.active {
             color: var(--nc-accent-blue) !important;
         }
 
@@ -670,51 +671,66 @@
                     <p class="section-subtitle">We are a one-stop destination for all kinds of interior needs</p>
                 </div>
                 
-                <!-- Desktop Carousel -->
-                <div id="servicesCarousel" class="carousel slide d-none d-md-block" data-bs-ride="carousel">
+                <div id="servicesCarousel" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <div class="row">
-                                <div class="col-md-4">
+                            <div class="row justify-content-center">
+                                <div class="col-11 col-md-8 col-lg-6">
                                     <div class="service-card">
                                         <div class="service-icon"><i class="bi bi-house-door"></i></div>
                                         <h3 class="service-title">Residential Interiors</h3>
                                         <p class="service-description">Modular kitchens, wardrobes, bedrooms, and living rooms designed to perfection.</p>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row justify-content-center">
+                                <div class="col-11 col-md-8 col-lg-6">
                                     <div class="service-card">
                                         <div class="service-icon"><i class="bi bi-building"></i></div>
                                         <h3 class="service-title">Commercial Interiors</h3>
                                         <p class="service-description">Offices, retail showrooms, and co-working spaces that inspire productivity.</p>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row justify-content-center">
+                                <div class="col-11 col-md-8 col-lg-6">
                                     <div class="service-card">
                                         <div class="service-icon"><i class="bi bi-tools"></i></div>
                                         <h3 class="service-title">Custom Furniture</h3>
                                         <p class="service-description">Tailor-made furniture designed to suit your space and taste perfectly.</p>
                                     </div>
-                                </_div>
+                                </div>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <div class="row">
-                                <div class="col-md-4">
+                            <div class="row justify-content-center">
+                                <div class="col-11 col-md-8 col-lg-6">
                                     <div class="service-card">
                                         <div class="service-icon"><i class="bi bi-lightbulb"></i></div>
                                         <h3 class="service-title">False Ceiling & Lighting</h3>
                                         <p class="service-description">Modern, stylish, and functional ceiling solutions with perfect lighting.</p>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row justify-content-center">
+                                <div class="col-11 col-md-8 col-lg-6">
                                     <div class="service-card">
                                         <div class="service-icon"><i class="bi bi-palette"></i></div>
                                         <h3 class="service-title">Wall Décor & Paints</h3>
                                         <p class="service-description">Textured, vibrant, and elegant finishes that transform your walls.</p>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row justify-content-center">
+                                <div class="col-11 col-md-8 col-lg-6">
                                     <div class="service-card">
                                         <div class="service-icon"><i class="bi bi-grid-3x3"></i></div>
                                         <h3 class="service-title">Flooring Solutions</h3>
@@ -728,60 +744,6 @@
                         <span class="carousel-control-prev-icon"></span>
                     </button>
                     <button class="carousel-control-next" type="button" data-bs-target="#servicesCarousel" data-bs-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </button>
-                </div>
-
-                <!-- Mobile Carousel -->
-                <div id="servicesCarouselMobile" class="carousel slide d-md-none" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="service-card">
-                                <div class="service-icon"><i class="bi bi-house-door"></i></div>
-                                <h3 class="service-title">Residential Interiors</h3>
-                                <p class="service-description">Modular kitchens, wardrobes, bedrooms, and living rooms designed to perfection.</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="service-card">
-                                <div class="service-icon"><i class="bi bi-building"></i></div>
-                                <h3 class="service-title">Commercial Interiors</h3>
-                                <p class="service-description">Offices, retail showrooms, and co-working spaces that inspire productivity.</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="service-card">
-                                <div class="service-icon"><i class="bi bi-tools"></i></div>
-                                <h3 class="service-title">Custom Furniture</h3>
-                                <p class="service-description">Tailor-made furniture designed to suit your space and taste perfectly.</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="service-card">
-                                <div class="service-icon"><i class="bi bi-lightbulb"></i></div>
-                                <h3 class="service-title">False Ceiling & Lighting</h3>
-                                <p class="service-description">Modern, stylish, and functional ceiling solutions with perfect lighting.</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="service-card">
-                                <div class="service-icon"><i class="bi bi-palette"></i></div>
-                                <h3 class="service-title">Wall Décor & Paints</h3>
-                                <p class="service-description">Textured, vibrant, and elegant finishes that transform your walls.</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="service-card">
-                                <div class="service-icon"><i class="bi bi-grid-3x3"></i></div>
-                                <h3 class="service-title">Flooring Solutions</h3>
-                                <p class="service-description">Tiles, wooden, marble, and budget-friendly flooring alternatives.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#servicesCarouselMobile" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#servicesCarouselMobile" data-bs-slide="next">
                         <span class="carousel-control-next-icon"></span>
                     </button>
                 </div>
