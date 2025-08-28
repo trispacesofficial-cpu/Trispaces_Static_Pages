@@ -257,7 +257,7 @@
         }
         
         /* General Section Styling */
-        section { padding: 3rem 0; }
+        section { padding: 1.5rem 0; }
         .section-title { 
             font-size: 3rem; 
             font-weight: 700; 
@@ -301,6 +301,12 @@
             color: var(--nc-text-muted);
             font-size: 0.9rem;
             margin-top: 0.5rem;
+        }
+
+        .lead {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--nc-text-light);
         }
 
         /* Services Section with Carousel */
@@ -419,12 +425,12 @@
             background: radial-gradient(circle, rgba(20, 39, 54, 0.4) 0%, rgba(13,13,13,0) 70%); 
         }
         .testimonial-quote {
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 400;
             line-height: 1.5;
             max-width: 800px;
             margin: 0 auto;
-            font-style: italic;
+            font-style: normal;
         }
         .testimonial-author { 
             margin-top: 2rem; 
@@ -486,6 +492,32 @@
             transform: translateY(-2px);
         }
 
+        /* Scrollable Text Container */
+        .scrollable-text {
+            max-height: 15vh;
+            overflow-y: auto;
+            padding-right: 15px;
+        }
+        .leadership-card .scrollable-text {
+            max-height: 70px;
+        }
+
+        /* Custom Scrollbar Styling */
+        .scrollable-text::-webkit-scrollbar {
+            width: 8px;
+        }
+        .scrollable-text::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+        }
+        .scrollable-text::-webkit-scrollbar-thumb {
+            background-color: var(--nc-accent-blue);
+            border-radius: 4px;
+        }
+        .scrollable-text::-webkit-scrollbar-thumb:hover {
+            background-color: #82c5ff;
+        }
+
         /* Scroll Animation Classes */
         .animate-on-scroll {
             opacity: 0;
@@ -530,7 +562,7 @@
             .hero h1 { font-size: 2.5rem; }
             .section-title { font-size: 2rem; }
             .stats-grid { grid-template-columns: 1fr; }
-            section { padding: 2rem 0; }
+            section { padding: 1rem 0; }
 
             /* Portfolio Carousel for small screens */
             #portfolioCarousel .carousel-item {
@@ -799,8 +831,10 @@
                     <div class="row">
                         <div class="col-lg-8 mx-auto text-center animate-on-scroll">
                             <h2 class="section-title">About NovaCasa</h2>
-                            <p class="section-subtitle">At NovaCasa Interiors, we believe that every space has a soul waiting to be revealed. Our mission is to design interiors that reflect both style and substance, while keeping affordability in mind.</p>
-                            <p class="lead">With a strong presence across Hyderabad and Bangalore, NovaCasa has grown into a trusted brand for custom-made interiors. Whether it's a compact home, a luxury villa, or a commercial workspace, we have the expertise, manpower, and resources to deliver quality interiors at low cost.</p>
+                            <div class="scrollable-text">
+                                <p class="section-subtitle">At NovaCasa Interiors, we believe that every space has a soul waiting to be revealed. Our mission is to design interiors that reflect both style and substance, while keeping affordability in mind.</p>
+                                <p class="lead">With a strong presence across Hyderabad and Bangalore, NovaCasa has grown into a trusted brand for custom-made interiors. Whether it's a compact home, a luxury villa, or a commercial workspace, we have the expertise, manpower, and resources to deliver quality interiors at low cost.</p>
+                            </div>
                         </div>
                     </div>
                     
@@ -838,7 +872,9 @@
                             <img src="assets/images/rakesh.jpg" alt="CEO">
                             <h3 class="leader-name">Rakesh</h3>
                             <p class="leader-title">CEO</p>
-                            <p class="leader-description">The creative mind who drives innovation and sets new design benchmarks for the industry.</p>
+                            <div class="scrollable-text">
+                                <p class="leader-description">The creative mind who drives innovation and sets new design benchmarks for the industry.</p>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -846,7 +882,9 @@
                             <img src="assets/images/kavyanjali.jpg" alt="CFO">
                             <h3 class="leader-name">Kavyanjali</h3>
                             <p class="leader-title">CFO</p>
-                            <p class="leader-description">The financial strategist ensuring quality remains affordable and cost-effective for all clients.</p>
+                            <div class="scrollable-text">
+                                <p class="leader-description">The financial strategist ensuring quality remains affordable and cost-effective for all clients.</p>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -854,7 +892,9 @@
                             <img src="assets/images/shravan_kumar.jpg" alt="COO">
                             <h3 class="leader-name">Shravan Kumar</h3>
                             <p class="leader-title">COO</p>
-                            <p class="leader-description">The operations expert who ensures smooth, timely project execution across all units.</p>
+                            <div class="scrollable-text">
+                                <p class="leader-description">The operations expert who ensures smooth, timely project execution across all units.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
