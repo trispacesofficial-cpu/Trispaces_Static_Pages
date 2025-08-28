@@ -423,12 +423,35 @@
             background: radial-gradient(circle, rgba(20, 39, 54, 0.4) 0%, rgba(13,13,13,0) 70%); 
         }
         .testimonial-quote {
-            font-size: 1.5rem;
-            font-weight: 400;
-            line-height: 1.5;
+            position: relative;
+            font-size: 1.2rem;
+            font-weight: 300;
+            line-height: 1.6;
             max-width: 800px;
             margin: 0 auto;
-            font-style: normal;
+            font-style: italic;
+            padding: 0 3rem;
+            color: var(--nc-text-muted);
+        }
+
+        .testimonial-quote::before,
+        .testimonial-quote::after {
+            content: '"';
+            position: absolute;
+            font-size: 5rem;
+            color: var(--nc-accent-blue);
+            opacity: 0.2;
+            line-height: 1;
+        }
+
+        .testimonial-quote::before {
+            top: -1rem;
+            left: 0;
+        }
+
+        .testimonial-quote::after {
+            bottom: -2rem;
+            right: 0;
         }
         .testimonial-author { 
             margin-top: 2rem; 
@@ -492,12 +515,9 @@
 
         /* Scrollable Text Container */
         .scrollable-text {
-            max-height: 15vh;
+            max-height: 25vh;
             overflow-y: auto;
             padding-right: 15px;
-        }
-        .leadership-card .scrollable-text {
-            max-height: 70px;
         }
 
         /* Custom Scrollbar Styling */
@@ -898,7 +918,6 @@
             <!-- Testimonial Section -->
             <section class="testimonial-section animate-on-scroll">
                 <div class="container text-center">
-                    <blockquote class="testimonial-quote">"Working with NovaCasa was like commissioning a masterpiece. They understood the unspoken language of our brand and translated it into a physical space that feels both inevitable and extraordinary."</blockquote>
                     <p class="testimonial-author">— Evelyn Reed, Creative Director</p>
                 </div>
             </section>
