@@ -322,7 +322,6 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
-            height: 100%;
         }
         
         .service-card:hover {
@@ -338,8 +337,7 @@
 
         .service-card-img {
             width: 100%;
-            height: 70%;
-            aspect-ratio: 16/9;
+            height: 250px;
             object-fit: cover;
             border-radius: 8px;
             margin-bottom: 1rem;
@@ -415,9 +413,9 @@
         }
         
         .leader-description {
-            color: var(--nc-text-muted);
-            font-size: 0.9rem;
-            line-height: 1.5;
+            color: #b5b5b5;
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
 
         /* Testimonial Section */
@@ -571,6 +569,9 @@
             #portfolioCarousel .carousel-control-prev,
             #portfolioCarousel .carousel-control-next {
                 width: 10%;
+            }
+            .service-card-img {
+                height: 200px;
             }
         }
     </style>
@@ -872,9 +873,7 @@
                             <img src="assets/images/rakesh.jpg" alt="CEO">
                             <h3 class="leader-name">Rakesh</h3>
                             <p class="leader-title">CEO</p>
-                            <div class="scrollable-text">
-                                <p class="leader-description">The creative mind who drives innovation and sets new design benchmarks for the industry.</p>
-                            </div>
+                            <p class="leader-description">The creative mind who drives innovation and sets new design benchmarks for the industry.</p>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -882,9 +881,7 @@
                             <img src="assets/images/kavyanjali.jpg" alt="CFO">
                             <h3 class="leader-name">Kavyanjali</h3>
                             <p class="leader-title">CFO</p>
-                            <div class="scrollable-text">
-                                <p class="leader-description">The financial strategist ensuring quality remains affordable and cost-effective for all clients.</p>
-                            </div>
+                            <p class="leader-description">The financial strategist ensuring quality remains affordable and cost-effective for all clients.</p>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -892,9 +889,7 @@
                             <img src="assets/images/shravan_kumar.jpg" alt="COO">
                             <h3 class="leader-name">Shravan Kumar</h3>
                             <p class="leader-title">COO</p>
-                            <div class="scrollable-text">
-                                <p class="leader-description">The operations expert who ensures smooth, timely project execution across all units.</p>
-                            </div>
+                            <p class="leader-description">The operations expert who ensures smooth, timely project execution across all units.</p>
                         </div>
                     </div>
                 </div>
