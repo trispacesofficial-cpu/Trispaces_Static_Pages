@@ -335,6 +335,10 @@
             font-size: 1.3rem;
             font-weight: 600;
             margin-bottom: 1rem;
+            white-space: nowrap;          /* prevents breaking into 2 lines */
+            text-align: center;           /* keeps it centered */
+            overflow: hidden;             /* ensures text doesn’t overflow card */
+            text-overflow: ellipsis;  
         }
 
         .service-card-img {
