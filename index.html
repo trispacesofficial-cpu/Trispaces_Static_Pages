@@ -510,6 +510,10 @@
             position: relative;
         }
 
+        #phone-card.is-active {
+            z-index: 20;
+        }
+
         #phone-dropdown {
             display: none;
             position: absolute;
@@ -1194,7 +1198,12 @@
 
             phoneCard.addEventListener('click', function(event) {
                 event.stopPropagation();
-                phoneDropdown.classList.toggle('show');
+                const isShown = phoneDropdown.classList.toggle('show');
+                if (isShown) {
+                    phoneCard.classList.add('is-active');
+                } else {
+                    phoneCard.classList.remove('is-active');
+                }
             });
 
             // Close dropdown when clicking outside
@@ -1202,6 +1211,7 @@
                 if (!phoneCard.contains(event.target)) {
                     if (phoneDropdown.classList.contains('show')) {
                         phoneDropdown.classList.remove('show');
+                        phoneCard.classList.remove('is-active');
                     }
                 }
             });
