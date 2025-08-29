@@ -355,7 +355,6 @@
             position: relative;
             overflow: hidden;
             border-radius: 16px;
-            margin-bottom: 2rem;
             aspect-ratio: 4/3;
         }
         .portfolio-item img {
@@ -490,6 +489,52 @@
         .contact-info {
             color: var(--nc-text-muted);
             font-size: 0.9rem;
+        }
+
+        .contact-card.clickable {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card.clickable:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-card-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        #phone-card {
+            position: relative;
+        }
+
+        #phone-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: var(--nc-black);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            z-index: 10;
+            padding: 0.5rem 0;
+        }
+
+        #phone-dropdown.show {
+            display: block;
+        }
+
+        #phone-dropdown .dropdown-item {
+            color: var(--nc-text-light);
+            padding: 0.75rem 1.5rem;
+            transition: background-color 0.2s ease;
+        }
+
+        #phone-dropdown .dropdown-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
         }
 
         /* Footer */
@@ -952,25 +997,33 @@
                 
                 <div class="row mt-4 gy-4">
                     <div class="col-md-4">
-                        <div class="contact-card animate-on-scroll">
+                        <div id="phone-card" class="contact-card animate-on-scroll clickable">
                             <div class="contact-icon"><i class="bi bi-telephone"></i></div>
                             <h3 class="contact-title">Phone</h3>
                             <p class="contact-info">+91-98765-43210</p>
+                            <div class="dropdown-menu" id="phone-dropdown">
+                                <a class="dropdown-item" href="tel:+919876543210">Call</a>
+                                <a class="dropdown-item" href="https://wa.me/919876543210" target="_blank">WhatsApp</a>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="contact-card animate-on-scroll">
-                            <div class="contact-icon"><i class="bi bi-envelope"></i></div>
-                            <h3 class="contact-title">Email</h3>
-                            <p class="contact-info">info@trispaces.com</p>
-                        </div>
+                        <a href="mailto:trispacesofficial@gmail.com" class="contact-card-link">
+                            <div class="contact-card animate-on-scroll clickable">
+                                <div class="contact-icon"><i class="bi bi-envelope"></i></div>
+                                <h3 class="contact-title">Email</h3>
+                                <p class="contact-info">trispacesofficial@gmail.com</p>
+                            </div>
+                        </a>
                     </div>
                     <div class="col-md-4">
-                        <div class="contact-card animate-on-scroll">
-                            <div class="contact-icon"><i class="bi bi-globe"></i></div>
-                            <h3 class="contact-title">Website</h3>
-                            <p class="contact-info">www.trispaces.com</p>
-                        </div>
+                        <a href="http://trispaces.in/" target="_blank" class="contact-card-link">
+                            <div class="contact-card animate-on-scroll clickable">
+                                <div class="contact-icon"><i class="bi bi-globe"></i></div>
+                                <h3 class="contact-title">Website</h3>
+                                <p class="contact-info">trispaces.in</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
                 
@@ -1133,6 +1186,24 @@
                         link.classList.add('active');
                     }
                 });
+            });
+
+            // Phone card dropdown
+            const phoneCard = document.getElementById('phone-card');
+            const phoneDropdown = document.getElementById('phone-dropdown');
+
+            phoneCard.addEventListener('click', function(event) {
+                event.stopPropagation();
+                phoneDropdown.classList.toggle('show');
+            });
+
+            // Close dropdown when clicking outside
+            window.addEventListener('click', function(event) {
+                if (!phoneCard.contains(event.target)) {
+                    if (phoneDropdown.classList.contains('show')) {
+                        phoneDropdown.classList.remove('show');
+                    }
+                }
             });
         });
     </script>
